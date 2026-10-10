@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1791093594888564195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1020314098653676770, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: Pan2D
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088985104804791882, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: shootButton.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088985104804791882, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: shootButton.m_SingletonActionBindings.Array.data[1].m_Id
+      value: b279a491-c889-4333-9e2b-2d008b2e0174
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088985104804791882, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: shootButton.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088985104804791882, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: shootButton.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Shoot Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: shotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a07a71345a49d441919edc3452a1e9d, type: 3}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 6944795826490561551}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onShootAnimationComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GunFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HandleDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Cowboy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onShootAnimationComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434709447239353120, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: onGunFired.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146637402898953450, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_Name
+      value: Bandit Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430151693161040748, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1088985104804791882, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5146637402898953450, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6944795826490561551}
+  m_SourcePrefab: {fileID: 100100000, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+--- !u!1 &6897185114590583049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5146637402898953450, guid: 7baf25597044ae043b0292e0225767bb, type: 3}
+  m_PrefabInstance: {fileID: 1791093594888564195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6944795826490561551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897185114590583049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94feac90a2851054cbea0056480cd478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CPUController
+  shootButton:
+    m_Name: Shoot Button
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 77d2bd3c-c1a3-4dce-bc68-e9f04f745531
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+    m_Priority: 0
+  minDelay: 0.25
+  maxDelay: 0.75

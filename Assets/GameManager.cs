@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 {
     private GameState gameState;
     
-    [SerializeField] private PlayerController player1;
+    [SerializeField] private Cowboy player1;
 
-    [SerializeField] private CPUController player2;
+    [SerializeField] private Cowboy player2;
     [SerializeField] UIManager uiManager;
 
     private AudioSource aud;
@@ -34,15 +34,23 @@ public class GameManager : MonoBehaviour
     {
         player1.onPlayerShot += HandleShotAttempt;
         player2.onPlayerShot += HandleShotAttempt;
+        player1.onDeathAnimationFinished += ResolveMatch;
+        player1.onShootAnimationComplete += ResolveMatch;
+        player2.onDeathAnimationFinished += ResolveMatch;
+        player2.onShootAnimationComplete += ResolveMatch;
     }
 
     private void OnDisable()
     {
         player1.onPlayerShot -= HandleShotAttempt;
         player2.onPlayerShot -= HandleShotAttempt;
+        player1.onDeathAnimationFinished -= ResolveMatch;
+        player1.onShootAnimationComplete -= ResolveMatch;
+        player2.onDeathAnimationFinished -= ResolveMatch;
+        player2.onShootAnimationComplete -= ResolveMatch;
     }
 
-    void HandleShotAttempt(PlayerController player)
+    void HandleShotAttempt(Cowboy player)
     {
         switch (gameState)
         {
@@ -52,14 +60,10 @@ public class GameManager : MonoBehaviour
             case GameState.Shooting:
                 HandleShoot(player);
                 break;
-            default:
-                Debug.Log("Cannot shoot anymore");
-                break;
         }
-        
     }
 
-    void HandleShoot(PlayerController player)
+    void HandleShoot(Cowboy player)
     {
         player.HandleShoot();
     }
@@ -89,12 +93,16 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountdownTimer()
     {
-        yield return new WaitForSeconds(Random.Range(3, 6));
+        var roundTimer = Random.Range(3, 6);
+        player1.FalseShotChance(roundTimer);
+        player2.FalseShotChance(roundTimer);
+        yield return new WaitForSeconds(roundTimer);
         
         uiManager.SetReadyText("SHOOT");
         gameState = GameState.Shooting;
         
-        player2.CPUShoot();
+        player1.BeginShooting();
+        player2.BeginShooting();
     }
 
 

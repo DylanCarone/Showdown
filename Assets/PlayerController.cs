@@ -6,95 +6,41 @@ using UnityEngine.InputSystem.Controls;
 
 public class PlayerController : MonoBehaviour
 {
-    
     [SerializeField] private InputAction shootButton;
-    [SerializeField] private PlayerController otherPlayer;
+
+    public event Action OnShootPressed;
     
-    public event Action<PlayerController> onPlayerShot;
-    [SerializeField] AudioClip shotSound;
-    AudioSource audioSource;
-    private Animator anim;
-
-    private bool playerShot = false;
-    private bool falseStart = false;
-    
-    [Header("Animation Events")] 
-    [SerializeField] private UnityEvent onGunFired;
-    [SerializeField] private UnityEvent onShootAnimationComplete;
-    [SerializeField] private UnityEvent onDeathAnimationFinished;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-        anim = GetComponent<Animator>();
-    }
-
     private void OnEnable()
     {
+        shootButton.performed += HandleShootPressed;
         shootButton.Enable();
     }
 
+
     private void OnDisable()
     {
+        shootButton.performed -= HandleShootPressed;
         shootButton.Disable();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HandleShootPressed(InputAction.CallbackContext context)
     {
-        if (shootButton.WasPerformedThisFrame())
-        {
-            RaisePlayerShot();
-        }
-        
+        TriggerShot();
     }
 
-    protected void RaisePlayerShot()
+    public void TriggerShot()
     {
-        onPlayerShot?.Invoke(this);
-    }
-    public void HandleDeath()
-    {
-        // play death animation
-        anim.SetTrigger("Die");        
+        OnShootPressed?.Invoke();
     }
 
-    public void FalseStart()
+    public virtual void BeginShooting()
     {
-        if (falseStart) return;
-        falseStart = true;
-        anim.SetTrigger("FalseStart");
+        // the player controller character will control their own shooting
     }
 
-    public void GunFired()
+    public virtual void TryFalseStart(float timer)
     {
-        ShootSFX();
-        onGunFired?.Invoke();
-        
-    }
-
-    public void FalseStartFinish()
-    {
-        falseStart = false;
-    }
-    public void FinishShootAnimation()
-    {
-        onShootAnimationComplete?.Invoke();
-    }
-
-    public void DeathAnimationFinished()
-    {
-        onDeathAnimationFinished?.Invoke();
+        // the player controller character will control their own shooting
     }
     
-    public void HandleShoot()
-    {
-        anim.SetTrigger("Shoot");   
-    }
-    
-    
-    private void ShootSFX()
-    {
-        audioSource.PlayOneShot(shotSound);
-    }
 }
